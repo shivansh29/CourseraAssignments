@@ -1,0 +1,117 @@
+<div class="container">
+<form name="validForm" novalidate> 
+    <div class="row">
+        <div class="row-md-6">
+            <label> First Name</label>
+        </div>
+        <div class="row-md-6">
+            <input type="text" name="first" style="color: black;" ng-model="Ctrl.user.first"
+             placeholder="enter your first name" required/><br>
+        </div>
+        <span
+            ng-if="(validForm.first.$error.required) && validForm.first.$touched" style="color: red;">
+            First Name is necessary
+          </span>
+        
+    </div>
+    <div class="row">
+        <div class="row-md-6">
+            <label> Last Name</label>
+        </div>
+        <div class="row-md-6">
+            <input type="text" name="last" style="color: black;" ng-model="Ctrl.user.last"
+             placeholder="enter your last name" required/><br>
+        </div>
+        <span
+            ng-if="(validForm.last.$error.required) && validForm.last.$touched" style="color: red;">
+            Last Name is necessary
+          </span>
+        
+    </div>
+    <div class="row">
+        <div class="row-md-6">
+            <label> Email Name</label>
+        </div>
+        <div class="row-md-6">
+            <input type="email" name="email" style="color: black;" ng-model="Ctrl.user.email"
+             placeholder="enter your mail" required/><br>
+        </div>
+        <span
+        ng-if="validForm.email.$invalid && validForm.email.$touched" style="color: red;">
+           Must be a valid email format
+          </span>
+        
+    </div>
+    <div class="row">
+        <div class="row-md-6">
+            <label> Phone Number</label>
+        </div>
+        <div class="row-md-6">
+            <input type="text" name="Phone" style="color: black;" pattern="(\d{3})-(\d{3})-(\d{4})" 
+            ng-model="Ctrl.user.phone" placeholder="enter your phone number" required/><br>
+        </div>
+        <span ng-if="validForm.Phone.$invalid && validForm.Phone.$touched" style="color: red;">
+            Phone must be in the format ###-###-####.
+          </span>
+        
+    </div>
+    <div class="row">
+        <div class="row-md-6">
+            <label> Your dish</label>
+        </div>
+        <div class="row-md-6">
+            <input type="text" name="dish" style="color: black;" placeholder="enter your dish" 
+            ng-model="Ctrl.user.dish"  required/><br>
+            <span ng-if="!Ctrl.successful">
+                No item exists
+            </span>
+        </div>
+        
+    </div>
+    
+    <div class="row">
+        <button ng-disabled="validForm.$invalid" style="color:black;" ng-click="Ctrl.submit(Ctrl.user)">
+            Submit
+        </button>
+    </div>
+
+</form>
+</div>
+
+<!--
+<form name="validForm" novalidate > 
+    
+            <label> First Name</label>
+        
+            <input type="text" style="color: black;" name="first" ng-model="Ctrl.first"
+            placeholder="enter your first name" required ><br>
+        
+        <span
+            ng-if="(validForm.first.$error.required) && validForm.first.$touched" style="color: black;">
+            FirstName is necessary
+          </span>
+        
+    
+            <label> Last Name</label>
+        
+            <input type="text" name="last" style="color: black;" placeholder="enter your last name" required/><br>
+            <label> Email Name</label>
+        
+            <input type="email" name="email" style="color: black;" placeholder="enter your mail" required/><br>
+        
+        
+            <label> Phone Number</label>
+        
+            <input type="number" name="Phone" style="color: black;" placeholder="777-888-9999" required/><br>
+        
+            <label> Your dish</label>
+        
+            <input type="text" name="dish" style="color: black;" required/><br>
+        
+        <button ng-disabled="validForm.$invalid" style="color:black;">
+            Submit
+        </button>
+    
+
+</form>
+-->

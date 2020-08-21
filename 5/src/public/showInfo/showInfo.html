@@ -1,0 +1,14 @@
+<div class="container">
+<div style="text-align:center" ng-if="Ctrl.userInfo !=null">
+    <label>Name:</label><label>{{Ctrl.userInfo.firstName}} {{Ctrl.userInfo.lastname}}</label><br>
+    <label>Email:</label><label>{{Ctrl.userInfo.email}}</label><br>
+    <label>Phone No:</label><label>{{Ctrl.userInfo.phone}}</label><br>
+    <label>Favorite Dish:</label><label>{{Ctrl.userInfo.name}}</label>
+</div>
+<div style="text-align:center" ng-if="Ctrl.userInfo ==null">
+   
+    <label>You are not signed in Please</label>
+    <a ui-sref="public.signUp">
+         Sign Up</a>
+</div>
+</div>
